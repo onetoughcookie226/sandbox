@@ -2,10 +2,11 @@ const toggleList = document.getElementById('toggleList');
 
 const listDiv = document.querySelector('.list');
 
-const input = document.querySelector('input.description');
-const p = document.querySelector('p.description');
-const button= document.querySelector('button.description');
-
+const descriptionInput = document.querySelector('input.description');
+const descriptionP = document.querySelector('p.description');
+const descriptionButton= document.querySelector('button.description');
+const addItemInput = document.querySelector('input.addIteminput');
+const addItemutton = document.querySelector('button.addItemButton');
 
 toggleList.addEventListener('click', () => {
     if (listDiv.style.display == 'none') {
@@ -20,11 +21,18 @@ toggleList.addEventListener('click', () => {
 
 });
 
-button.addEventListener('click', () => {
-    p.innerHTML = input.value + ':';
+descriptionButton.addEventListener('click', () => {
+    descriptionP.innerHTML = descriptionInput.value + ':';
 });
 
 p.title = "List description";
+
+addItemutton.addEventListener('click', () => {
+    let li = document.createElement('li');
+    li.textContent = addItemInput.value;
+
+});
+
 
 
 /*above is the EMCA6 syntax for anonymous function*/
